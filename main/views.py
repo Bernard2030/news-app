@@ -1,3 +1,4 @@
+from .request import get_news
 from flask import render_template
 from app import app
 
@@ -7,8 +8,13 @@ def index():
     """
     view root page function that returns the index page and its data
     """
-    message = "I love Dorcas so much and I don't Know Why??"
-    return render_template('index.html', message = message)
+    #get current news
+    current_news = get_news()
+    print(current_news)
+    
+    message = "Welcome to the Best News Website for latest and current news"
+    return render_template('index.html', message = message, current = current_news )
+     
 
 @app.route("/news/<int:news_id>")
 def news(news_id):

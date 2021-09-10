@@ -2,13 +2,13 @@ class Config:
     """
     General configuration parent class
     """
-    pass
-
+    NEWS_API_BASE_URL ='https://newsapi.org/v2/{}?q=&apiKey={}'
+   
 class Prodconfig(Config):
     """
     Production configuration child class.
 
-    Args: The patrent configuration class with the General configuration settings
+    Args: The parent configuration class with the General configuration settings
     """
     pass
 

@@ -1,4 +1,23 @@
-<h1>Hello bernard</h1>
-<h1>
-    {{message}}
-</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the Best News Website for latest and current news </title>
+        {% endif %}
+        
+    </head>
+    <body>
+
+        
+        <h3>current news</h3>
+        <ul>
+            {% for current_news in current %}
+            <li>{{current_news.name}}</li>
+            {% endfor %}
+        </ul>
+
+    </body>
+</html>
