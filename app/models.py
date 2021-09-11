@@ -1,44 +1,34 @@
-class Movie:
+# from os import name
+
+
+class News:
     '''
-    Movie class to define Movie Objects
+    News class to define News Objects
     '''
 
-    def __init__(self,id,title,overview,poster,vote_average,vote_count):
+    def __init__(self,id,name,url,description,category, country):
         self.id =id
+        self.name= name
+        self.url = url
+        self.description = description
+        self.category = category
+        self.country = country
+        
+
+
+
+class get_article:
+
+    get_article = []
+
+    def __init__(self,title,author,url,description, urlToImage, publishedAt, content):
         self.title = title
-        self.overview = overview
-        self.poster = "https://image.tmdb.org/t/p/w500/" + poster
-        self.vote_average = vote_average
-        self.vote_count = vote_count
+        self.author = author
+        self.url = url
+        self.description= description
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.content = content
 
 
 
-class Review:
-
-    all_reviews = []
-
-    def __init__(self,movie_id,title,imageurl,review):
-        self.movie_id = movie_id
-        self.title = title
-        self.imageurl = imageurl
-        self.review = review
-
-
-    def save_review(self):
-        Review.all_reviews.append(self)
-
-
-    @classmethod
-    def clear_reviews(cls):
-        Review.all_reviews.clear()
-
-    @classmethod
-    def get_reviews(cls,id):
-
-        response = []
-
-        for review in cls.all_reviews:
-            if review.movie_id == id:
-                response.append(review)
-
-        return response

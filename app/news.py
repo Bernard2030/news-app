@@ -3,7 +3,7 @@ class News:
     News class to define news objects
     """
 
-    def __init__(self, id, name, url, description ):
+    def __init__(self, id, name, url, description, country ):
         """
         Getting news objects
         """
@@ -11,11 +11,21 @@ class News:
         self.name = name
         self.url = url
         self.description = description
+        self.country = country
+
+class Articles:
+    """
+    Article class that returns details of an article
+    """        
+    def __init__(self,title, author,description, url, urlToImage, publishedAt, content):
+        self.title = title
+        self.author = author
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.conten = content
         
 
-        #keyward e.g article containing ward 'amazone'
-        #Date published e.g articles published yesterdayt
-        #source name e.g find articles by moringa
-        #domain_name e.g articles published on ktn.com
-        #language e.g articles in english
+       
         

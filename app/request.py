@@ -1,16 +1,21 @@
 
-from app import app
 import urllib.request, json
-from .models import news
+from app.models import News, get_article
 
-News = news.News
+
 
 #Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
 #Getting the news base url
-base_url = app.config["NEWS_API_BASE_URL"]
+base_url = None
+#getting get_article base url
+base_url_get_article = None
 
+def configure_request(app):
+    global api_key,base_url, base_url_get_article
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
 def get_news():
     """
     Function that gets the json response to our url request
@@ -29,6 +34,21 @@ def get_news():
 
     return news_results 
 
+def search_news(news_name):
+    search_news_url = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'.format(api_key,news_name)
+    with urllib.request.urlopen(search_news_url) as url:
+        search_news_data = url.read()
+        search_news_response = json.loads(search_news_data)
+
+        search_news_results = None
+
+        if search_news_response['sources']:
+            search_news_list = search_news_response['sources']
+            search_news_results = process_results(search_news_list)
+
+
+    return search_news_results       
+
 def process_results(news_list):
     """
     A function that processes the news result and transform them to a list of objects
@@ -45,12 +65,14 @@ def process_results(news_list):
        name = news_item.get('name')
        description = news_item.get('description')
        url = news_item.get('url')
+       category = news_item.get('category')
        
 
     if name:
-            new_object = News(name, id, description, url )
-            news_results.append(new_object) 
+            news_object = News(name, id, description, url, category )
+            news_results.append(news_object) 
 
 
 
-    return news_results    
+    return news_results 
+
