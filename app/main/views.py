@@ -1,4 +1,5 @@
-from ..request import get_news 
+
+from ..request import get_news,get_articles
 from flask import render_template
 from . import main
 
@@ -17,17 +18,17 @@ def index():
      
 
 @main.route("/news/<int:news_id>")
-def news(source_id):
+def news(Articles):
     """
     view news page function that returns the news detail page and its data from a source
     """
     #get news based on source id
 
-    news = get_news(source_id)
+    Articles = get_articles(Articles)
     print(news)
-    id = f'{source_id}'
+    id = f'{Articles}'
 
-    return render_template("news.html", new = news, id = source_id)
+    return render_template("news.html", Articles = Articles, id = Articles)
 
 
 # @main.route('/search/<news_name>')

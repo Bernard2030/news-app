@@ -18,9 +18,13 @@
     <!-- Popular movie -->
     <div class="row">
         <h3> current news</h3>
-        <ul>
-            {{ macro.displayNews_List(current)}}
-        </ul>
+     <ul>
+         {% for current_news in current %}
+         <li>
+             <a href="/news/{{current_news.id}}">{{current_news.id}}</a>
+         </li>
+         {% endfor %}
+     </ul>
     </div>
     <!-- Upcoming movie  -->
    

@@ -1,6 +1,6 @@
 
 import urllib.request, json
-from app.models import News, get_article
+from app.models import News, Articles
 
 
 
@@ -66,13 +66,63 @@ def process_results(news_list):
        description = news_item.get('description')
        url = news_item.get('url')
        category = news_item.get('category')
+       country = news_item.get('country')
        
 
     if name:
-            news_object = News(name, id, description, url, category )
+            news_object = News(name, id, description, url, category, country )
             news_results.append(news_object) 
 
 
 
     return news_results 
+
+def get_articles(articles):
+    """
+    Function that gets the json response for article url
+    """    
+    get_articles_url = 'https://newsapi.org/v2/everything?q={}&from=2021-09-11&sortBy=popularity&apiKey=e984567f65124d82bdb23cfc40ce31b8'.format(articles)
+
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        get_articles = None
+
+        if get_articles_response['articles']:
+            get_articles_list = get_articles_response['articles']
+            get_articles = process_articles(get_articles_list)
+
+    return get_articles 
+
+def process_articles(news_list):
+    """
+    A function that processes the news result and transform them to a list of objects
+
+    Args:
+        news_list: A list of dictionary that returns news details
+
+    return:
+         news_results: A list of news objects    
+    """           
+    news_results = []
+    for news_item in news_list:
+       title = news_item.get('title')
+       author = news_item.get('author')
+       description = news_item.get('description')
+       url = news_item.get('url')
+       urlToImage = news_item.get('urlToImage')
+       publishedAt = news_item.get('publishedAt')
+       content = news_item.get('content')
+       
+
+    if title:
+            articles_object = Articles(title, author, description, url, urlToImage, publishedAt, content )
+            news_results.append(articles_object)
+            
+
+
+
+    return news_results 
+
 

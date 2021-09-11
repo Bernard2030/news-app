@@ -17,9 +17,9 @@ class News:
 
 
 
-class get_article:
+class Articles:
 
-    get_article = []
+    get_articles = []
 
     def __init__(self,title,author,url,description, urlToImage, publishedAt, content):
         self.title = title
