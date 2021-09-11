@@ -1,5 +1,5 @@
 
-{% for current_news in new %}
+{% for current_news in articles %}
 <p>{{ current_news.author}}</p>
 <p>{{current_news.title}}</p>
 <a href="{{ current_news.url}}">
@@ -10,3 +10,4 @@
 </div>
 <p>{{ current_news.publishedAt}}</p>
 <p>{{ current_news.content}}</p>
+{% endfor %}

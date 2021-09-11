@@ -1,10 +1,10 @@
 
 
 <!-- Displaying reviews macro -->
-{% macro displayReviews(review_list) %}
-    {% for review in review_list %}
+{% macro displayNews(current_news_list) %}
+    {% for current_news in current_news_list %}
     
-        <h2> {{ review.title}} </h2>
+        <li> <a href="/news/{{current_news.id}}">{{ current_news.name}} </li></a>
 
     
     {% endfor %}

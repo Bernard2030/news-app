@@ -1,43 +1,34 @@
 
 from ..request import get_news,get_articles
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from . import main
+# from ..models import News, Articles
 
 #Views
 @main.route('/')
 def index():
+
     """
     view root page function that returns the index page and its data
     """
-    #get current news
+   
     current_news = get_news()
     print(current_news)
     
     title = "Welcome to the Best News Website for latest and current news"
-    return render_template('index.html', title= title, current = current_news )
+    return render_template('index.html', title= title, current_news = current_news )
      
 
-@main.route("/news/<int:news_id>")
-def news(Articles):
+@main.route("/news/<news_id>")
+def articles(news_id):
     """
     view news page function that returns the news detail page and its data from a source
     """
     #get news based on source id
 
-    Articles = get_articles(Articles)
-    print(news)
-    id = f'{Articles}'
+    articles = get_articles(news_id)
+    print(articles)
+    title = f'{news_id}'
 
-    return render_template("news.html", Articles = Articles, id = Articles)
-
-
-# @main.route('/search/<news_name>')
-# def search(news_name):
-#     '''
-#     View function to display the search results
-#     '''
-#     news_name_list = news_name.split(" ")
-#     news_name_format = "+".join(news_name_list)
-#     searched_news = search_news(news_name_format)
-#     title = f'search results for {news_name}'
-#     return render_template('search.html',news = searched_news)    
+    return render_template("news.html", articles = articles, title = title)
+  
