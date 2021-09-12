@@ -2,14 +2,16 @@
 <!-- Displayingcurent news macro -->
 {% macro displayNews(current_news_list) %}
     {% for current_news in current_news_list %}
-    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 ">
-        <div class="card">
-            <div style="list-style-type: none; min-height: 150px;" class="text-center"> <button><a href="/news/{{current_news.id}}">{{ current_news.name}}</a></button>
-            </div>
+   
+<div class="col-md-3">
+    <div class="card" style="box-sizing: border-box; border: seagreen solid; padding: 5px; border-radius: 10%; margin: 10px;">
+        <div class="card-body">
+          <h5 style="color: brown; text-transform: uppercase; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: large;" class="card-title text-center">{{ current_news.name}}</h5>
+          <p  style="color: orangered; font-family: 'Open Sans', sans-serif" class="card-text">{{current_news.url}}</p>
+          <a href="/news/{{current_news.id}}" class="btn btn-primary-sm">View Articles</a>
         </div>
-       
-    </div>
-
+      </div>
+</div>
     
     {% endfor %}
 {% endmacro %}
