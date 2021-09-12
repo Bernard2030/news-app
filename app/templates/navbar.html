@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> -->
+
 </head>
 <body>
     <div class="navbar navbar-inverse" role="navigation">
@@ -20,10 +18,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
+                        <!-- dropdown menu -->
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          <!-- Find News Here -->
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+          
+          {% for current_news in articles %}
+                       <li   style="background-color:rgb(8, 94, 109);"><a class="dropdown-item active" style="color:DodgerBlue;font-size: large;" href="{{current_news.url }}">{{ current_news.url}}</a></li>
+                    {% endfor %}
+         
+        </ul>
+      </div>
+                </ul>
             </div>
     
         </div>
     </div>
+
+
 </body>
 </html>

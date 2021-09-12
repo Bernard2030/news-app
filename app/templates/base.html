@@ -5,6 +5,9 @@
     {% if title %}
     <title> {{ title }}</title>
         {% else %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
     <meta 
     <title>Welcome to the Best News Website for latest and current news</title>
     {% endif %}
@@ -13,11 +16,23 @@
 
         <!-- Content block -->
 
-        {% extends 'bootstrap/base.html'%}
+{% extends 'bootstrap/base.html'%}
         <!-- Navbar block  --> 
 {% block navbar %}
 {% include 'navbar.html' %}
 {% endblock %}
+
+
+
+<!-- <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 text-white" style="text-align: center;background-color: black;">
+          <p>Copyrite @2021</p>
+        </div>
+      </div>
+    </div>
+  </footer> -->
     
 </body>
 </html>

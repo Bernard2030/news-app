@@ -30,5 +30,5 @@ def articles(news_id):
     print(articles)
     title = f'{news_id}'
 
-    return render_template("news.html", articles = articles, title = title)
+    return render_template("articles.html", articles = articles, title = title)
   

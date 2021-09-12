@@ -1,10 +1,14 @@
 
-
-<!-- Displaying reviews macro -->
+<!-- Displayingcurent news macro -->
 {% macro displayNews(current_news_list) %}
     {% for current_news in current_news_list %}
-    
-        <li> <a href="/news/{{current_news.id}}">{{ current_news.name}} </li></a>
+    <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 ">
+        <div class="card">
+            <div style="list-style-type: none; min-height: 150px;" class="text-center"> <button><a href="/news/{{current_news.id}}">{{ current_news.name}}</a></button>
+            </div>
+        </div>
+       
+    </div>
 
     
     {% endfor %}

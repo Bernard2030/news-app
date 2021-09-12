@@ -4,6 +4,7 @@ from app.models import News, Articles
 
 
 
+
 #Getting api key
 api_key = None
 
