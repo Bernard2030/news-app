@@ -1,45 +1,46 @@
-News-App
-Author
-Anthony
+## news-app
+## Author
+Bernard Opiyo
 
-This is a News App that consumes News API to display Top headlines from different sources and has an option to selects specific news sources then displays its content on the app.
+This is a News App that consumes News API to display Top headlines from different sources and has an option to selects specific news sources then displays its content on the and their images too.
 
-Technologies Used
-Python
+## Technologies Used
+* Python
 
-Html
+* Html
 
-Css
+* Css
 
-Shell
+* Shell
 
-Requirements
-Flask.
+## Requirements
+* Flask.
 
-Python3.
+* Python3.8
 
-Python-Pip3
+* Python-Pip3
 
-Setup Instructions and Installation
-Clone the repository into your computer to your prefered folder. Link to repo https://github.com/Bernard2030/news-app
-In your terminal navigate to your folder.
+## Setup Instructions and Installation
+* Clone the repository into your computer to your prefered folder. Link to repo https://github.com/Bernard2030/news-app
+* In your terminal navigate to your folder.
 Run chmod a+x start.sh
 ./start.sh to run the app
 
 
-Development
+## Development
 You're welcomed in improving this application.
 
-To fix a bug or enhance an existing module, follow these steps:
+## To fix a bug or enhance an existing module, follow these steps:
 
-Fork the repo
-Create a new branch (git checkout -b improve-feature)
-Make sure you change your file as required.
-Add changes to reflect the changes made
-Commit your changes (git commit -am 'Improve feature')
-Push to the branch (git push origin improve-feature)
-Create a Pull Request
-Known Bugs
+## Fork Repo
+* Create a new branch (git checkout -b improve-feature)
+* Make sure you change your file as required.
+* Add changes to reflect the changes made
+* Commit your changes (git commit -am 'Improve feature')
+* Push to the branch (git push origin improve-feature)
+* Create a Pull Request
+
+## Known Bugs
 Free API's have a limited number of requests.
 
 ## Contact:
