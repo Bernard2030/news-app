@@ -40,6 +40,9 @@ Commit your changes (git commit -am 'Improve feature')
 Push to the branch (git push origin improve-feature)
 Create a Pull Request
 Known Bugs
-Free API
+Free API's have a limited number of requests.
+
+## Contact:
+You can reach me through my email; brobernard.254@gmail.com
 
 License
