@@ -1,6 +1,6 @@
 
- {% extends 'base.html'%}
-{%block content%} -->
+{% extends 'base.html'%}
+{%block content%} 
 
 <!-- {% block styles%}
     {{ super() }}
@@ -13,7 +13,7 @@
 <p style="font-family: 'Open Sans', sans-serif;">{{current_news.title}}</p>
 
     <button type="button" class="btn btn-secondary"><a href="{{ get_articles_url}}"></a>Read More</button>
- <p>{{ current_news.description}}</p> -->
+ <p>{{ current_news.description}}</p> 
 </a>
 <div class="jumbotron">
 <img class="img-responsive" src="{{current_news.urlToImage}}" alt="images">
